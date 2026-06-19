@@ -1,0 +1,415 @@
+\documentclass[aps,prx,article,twocolumn,amsmath,amssymb,superscriptaddress,longbibliography]{revtex4-2}
+\usepackage{graphicx}  
+\usepackage{dcolumn}   
+\usepackage{bm}        
+\usepackage{amssymb}   
+\usepackage{amsmath}
+\usepackage{mathrsfs}
+\usepackage{epigraph}
+\usepackage{braket}
+\usepackage{gensymb}
+\usepackage{lmodern}
+\usepackage{ tipa }
+\usepackage{bbold}
+\usepackage{esint}
+\usepackage{mathdots}
+\usepackage{xcolor}
+\usepackage{appendix}
+\usepackage{multirow}
+\usepackage{float}
+\usepackage{physics}
+\usepackage[normalem]{ulem}
+\usepackage{times}
+
+\usepackage{comment}
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref}
+
+
+% \usepackage{lineno}
+% \linenumbers
+
+
+\begin{document}
+\title{Anharmonic Superlattice Distortions and Charge Order\\ in Rhombohedral Multi-Layer Graphene} 	
+\author{Haoran Yan}
+\affiliation{Department of Chemistry, Emory University, Atlanta, GA 30322, USA}
+\author{Wangqian Miao}
+\affiliation{Department of Physics, The Pennsylvania State University, University Park, PA 16802, USA}
+\affiliation{Department of Chemistry, Emory University, Atlanta, GA 30322, USA}
+\author{Ziyan Zhu}
+\affiliation{Department of Physics, Boston College, Chestnut Hill, MA, USA}
+\author{Jiang-Xiazi Lin}
+\email[Correspondence should be addressed to \href{mailto:jiangxiazi.lin@emory.edu}{jiangxiazi.lin@emory.edu} and \href{mailto:yao.wang@emory.edu}{yao.wang@emory.edu}]{}
+\affiliation{Department of Physics, Emory University, Atlanta, GA 30322, USA}
+\author{Yao Wang}
+\email[Correspondence should be addressed to \href{mailto:jiangxiazi.lin@emory.edu}{jiangxiazi.lin@emory.edu} and \href{mailto:yao.wang@emory.edu}{yao.wang@emory.edu}]{}
+\affiliation{Department of Chemistry, Emory University, Atlanta, GA 30322, USA}
+\date{\today}
+\begin{abstract} 
+The flat-band electronic system without moiré potential in rhombohedral multilayer graphenes (RMG) has attracted tremendous attention because of emergent phases such as fractional Chern insulating insulators and chiral superconductors. These exotic states are widely believed to originate from strong correlations in the flat-band systems. At the same time, additional phases associated with spatial-symmetry breaking have been observed in certain regions of the phase diagram. Here, we propose a theoretical framework to explain these spatially anisotropic phases together with the observed doping hysteresis. Using the rhombohedral hexalayer graphene as an example, we show that Fermi-surface nesting within a nonmagnetic regime of the parameter space can drive a charge instability. Once established, the resulting charge-density-wave order breaks both translational and rotational symmetries and couples to anharmonic superlattice distortions, thereby accounting for the recently observed hysteretic and antimagnetic behavior. Our framework further suggests the presence of a competing subleading charge instability and strong electron-lattice coupling in RMG, which may contribute to the other correlated phases observed in the family of materials.
+\end{abstract}
+
+\maketitle
+
+\section{Introduction}
+
+Flat-band two-dimensional systems have become a central platform for exploring tunable strongly correlated states, because the suppression of kinetic energy amplifies the effects of Coulomb interactions, enabling a variety of quantum many-body states\,\cite{bistritzer2011moire, nuckolls2024microscopic, andrei2021marvels}. Much of this progress began in moir\'e superlattices formed by rotational misalignment or the lattice mismatch in van der Waals heterostructures, in which many exotic phases such as fractional Chern insulating (FCI) phases, orbital ferromagnetism, and superconductivity have been observed\,\cite{cao2018unconventional,cao2018correlated,balents2020superconductivity, wang2020correlated,cai2023signatures, ju2024fractional,bernevig2025fractional}. Beyond these moiré platforms, rhombohedral multilayer graphene (RMG) has recently emerged as an especially clean and versatile alternative. In RMG, crystalline stacking naturally generates flatbands at low doping, while displacement fields provide continuous control over the band structure and geometry. Experiments have now revealed a broad range of correlated and topological phases in this platform, including spin- and valley-polarized quarter-metal states\,\cite{zhou2021half, han2023orbital, auerbach2025isospin, shi2020electronic, xie2026magnetic, aronson2025displacement}, FCI phases\,\cite{lu2024fractional, lu2025extended, xie2025tunable, zhang2026moire, xiao2025thickness}, and unconventional superconductivity with possible chiral pairing\,\cite{zhou2021superconductivity, han2025signatures, han2026evidence, choi2025superconductivity, holleis2025fluctuating}.
+
+In addition to these exotic magnetic and superconducting states, recent experiments have revealed symmetry-breaking stripe-like electronic orders in rhombohedral graphenes, manifested as spatially anisotropic resistivity in angle-resolved transport measurements\,\cite{qin2025extreme,morissette2025superconductivity}. Remarkably, these stripe orders are found to coexist with superconductivity and may even enhance it, raising the possibility that the anisotropy and the pairing mechanism may share a common microscopic origin. These discussions can be further traced back to earlier studies of rhombohedral trilayer graphene, where SNOM experiments have revealed electron-phonon coupling\,\cite{zan2024electron} and mean-field simulations have suggested phonon-mediated topological superconductivity\,\cite{chou2021acoustic}. With the recent observations, these discussions point to a possible connection among anisotropic stripes, phonons, and superconductivity.
+
+A more recent experiment has further clarified the nature of this stripe order and its interplay with magnetic phases\,\cite{zhao2026hysteretical}. It shows that the stripe state competes strongly with spin- and valley-polarized states, which are triggered in regimes of the phase diagram by orbital ferromagnetism, and is suppressed by magnetic field. More importantly, the anisotropic state is consistently accompanied by a doping-driven hysteresis, a feature that has also recently been reported in several few-layer graphene systems\,\cite{zheng2023electronic, singh2026stacking}. This hysteretic behavior closely parallels a recent observation in the quasi-one-dimensional quantum spin Hall insulator TaIrTe$_4$, where scanning-probe and Raman experiments have attributed it to strong electron--phonon coupling\,\cite{tang2026bistable}. Taken together, these recent observations in different flat-band systems suggest a unified picture in which anisotropic stripe orders are induced by strong coupling between electrons to anharmonic phonons.
+
+Here we develop a phenomenological framework for understanding the anisotropy and hysteresis recently observed in rhombohedral graphene. The key idea is that, near a doping-tuned van Hove singularity, the Fermi surface develops nesting at selected wavevectors, which strongly enhances the charge susceptibility and drives a stripe-like CDW instability that breaks both translational and rotational symmetry. In flat-band systems, where electron--phonon coupling is amplified\,\cite{wu2018theory,angeli2019epc,wu2018theory, chen2024strong,li2024evolution,birkbeck2025quantum, Liu2022moirephonon,kwan24epc,shi25epctbg,liu23epctbg,zhu26epc}, the onset of this stripe order can further induce a substantial lattice distortion toward a lower-symmetry structure whose superlattice is commensurate with the CDW order. Because the lattice structure of RMG is itself unstable, this distortion become trapped in a local metastable configuration by lattice anharmonicity. As a result, the structural distortion can survive even after the electronic order has disappeared upon tuning to a trivial doping level. This mechanism naturally gives rise to resistivity hysteresis along the doping axis and is also consistent with the strong sensitivity of the effect to magnetic field and spin-valley polarization. Although the present simulation does not explicitly incorporate strong electronic correlations, it nevertheless provides a unified explanation for the recently observed anisotropic, nonmagnetic, and hysteretic states. While developed for the microscopic model of RMG, this mechanism is expected to apply more broadly to low-dimensional materials that simultaneously host van Hove singularities (VHSs) and structural instability.
+
+
+\section{Tight-Binding Model for Rhombohedral Multi-Layer Graphene}\label{sec:tightBinding}
+
+To describe the electronic structure of RMG, especially the electronic properties at the flat bands, we employ a tight-binding model based on the underlying atomic geometry, an approach that has been widely used for parameterizing 2D materials\,\cite{fang2015ab,koshino2018maximally,miao2023truncated, vafek2023continuum}. Within this framework, the electronic hopping integrals between different C $p_z$ orbitals are approximated through the Slater--Koster parametrization, whose explicit dependence on bond geometry makes it particularly suitable for incorporating lattice distortions through the modified atomic configuration\,\cite{slater1954simplified}. Specifically, the tight-binding Hamiltonian of non-interacting electrons is
+\begin{equation}\label{eq:nonintHam}
+\mathcal{H}_0=\sum_{l,m,\alpha,\sigma}t(\mathbf{r}_{lm\alpha})\, c^\dagger_{lm\alpha\sigma}c_{lm\alpha\sigma},
+\end{equation}
+where $c^\dagger_{lm\alpha\sigma}$ ($c_{lm\alpha\sigma}$) creates (annihilates) an electron at the $l$-th layer, the $m$-th unit cell, and $\alpha$-th sublattice site, with spin $\sigma=\uparrow$ or $\downarrow$. The hopping amplitude between two sites separated by $\mathbf{r}$ is explicitly approximated as
+\begin{align}
+   t(\mathbf{r}) = V_{pp\pi}(r)\left(1-\frac{z^2}{r^2}\right) + V_{pp\sigma}(r)\frac{z^2}{r^2}, 
+\end{align}
+where $z$ is the out-of-plane component of $\mathbf{r}$ and $r = |\mathbf{r}|$. The distance-dependent $\pi$- and $\sigma$-type hopping integrals are approximated by
+\begin{align}
+V_{pp\pi}(r) &= V_{pp\pi}^0 \, e^{q_\pi (1 - r/a_\pi)} f_c(r),\\
+V_{pp\sigma}(r) &= V_{pp\sigma}^0 \, e^{q_\sigma (1 - r/a_\sigma)} f_c(r),
+\end{align}
+with cutoff function $f_c(r) = \left[1 + e^{(r - r_c)/l_c}\right]^{-1}.$
+For the calculations presented here, we select $V_{pp\pi}^0 = -2.81\,\mathrm{eV}$ and $V_{pp\sigma}^0 = 0.48\,\mathrm{eV}$ as the overall $\pi$- and $\sigma$-type hopping strengths, together with reference bond lengths $a_\pi = 1.418\,\text{\AA}$ and $a_\sigma = 3.349\,\text{\AA}$\,\cite{herzogarbeitman2024moire}. The inclusion of long-range hopping breaks particle-hole symmetry in the model, consistent with the known electronic structure of RMG\,\cite{huang2023spin, koh2024correlated, herzogarbeitman2024moire, wolf2024magnetism, parramartinez2025nematic}.
+
+Mimicking experiments with a perpendicular displacement field, we further consider a layer-dependent onsite potential. This field breaks inversion symmetry and generates an energy offset between different graphene layers\,\cite{herzogarbeitman2024moire}, leading to the second-quantized term $\mathcal{H}_{\rm RMG} = \mathcal{H}_0 + \mathcal{H}_D$ with
+\begin{align}\label{eq:nonintHamDfield}
+\mathcal{H}_D = \sum_{l,m,\alpha,\sigma} \frac{|e| d_0 D}{\epsilon_r} \left(l - \frac{n-1}{2}\right) c^\dagger_{lm\alpha \sigma} c_{lm\alpha \sigma},
+\end{align}
+where $D$ denotes the displacement field, $d_0$ is the interlayer spacing for the $n$-layer system, and $\epsilon_r$ is the dielectric constant. This term induces a tunable interlayer asymmetry and opens a gap at the charge neutral point (CNP).
+
+In this paper, we focus on the rhombohedral six-layer graphene, motivated by recent angle-resolved transport experiments\,\cite{qin2025extreme, morissette2025superconductivity, zhao2026hysteretical}, although the model and framework apply to general systems. Figure~\ref{fig:flatbandDOS} presents the band structure and density of states (DOS) calculated from our model. At zero displacement field ($D=0$), the system exhibits gapless bands, with a characteristic flat-band regime near the $K$ and $K'$ point (highlighted by bold lines). Physically, these low-energy electronic states in the flat-band regime are predominantly localized on the outermost layers \cite{zhang2011spontaneous,lau2021designing, zhang2024correlated, xiao2025thickness}, which makes them especially sensitive to an applied displacement field compared with higher-energy states. Once a finite displacement field is introduced, a gap opens and the top valence band develops a Mexican-hat-like dispersion together with Fermi-surface pockets (see the right panel in Fig~\ref{fig:flatbandDOS})\,\cite{wolf2024magnetism,parramartinez2025nematic}. 
+
+\begin{figure} [!t]
+\centering 
+\includegraphics[width=8.5cm]{Figure1_flatband_and_dos_v2.eps} \vspace{-3mm}
+\caption{Band structures of rhombohedral hexalayer graphene near valley $K$ for zero electric displacement field (left) and for a finite displacement field of $D=-160\,\text{mV/nm}$ (right). The tunable flat-band regime is highlighted by bold lines. The corresponding DOS for each case is shown in the right panel, where the van Hove singularity relevant to this paper is marked.}
+\label{fig:flatbandDOS} 
+\end{figure}
+
+This flat-band sector is widely believed to underlie the observed unconventional superconductivity\,\,\cite{chou2025intravalley,dong2026superconductivity,gaggioli2025spontaneous,li2025berry,geier2026chiral,parramartinez2025band,shavit2025ephemeral,jahin2026enhanced} and possible Wigner-crystal-like behavior as primarily associated with the flat-band electronic states\,\,\cite{dong2024anomalous,dong2024theory,dong2024stability,tan2024parent,zeng2024sublattice,kwan2025moire,miao2026various}, whereas other phenomena, such as orbital ferromagnetism and fractional quantum Hall effects, may also involve contributions from additional bands\,\cite{huang2023spin,wolf2024magnetism,guo2024fractional,huang2025fractional,yu2025moire}. A key consequence of the flat low-energy dispersion is the emergence of a VHS near the CNP, which will be the primary focus of this paper. It is worth noting that the band tops of lower bands generate VHSs as well, although with lower DOS, and these features will play a role in the later discussion. 
+
+
+
+
+\section{Electronic and Lattice Instabilities}
+
+Near the VHS regime, the strongly enhanced DOS makes the system particularly susceptible to ordering instabilities driven by electronic interactions or electron-phonon coupling. At the same time, the nature of these instabilities is strongly influenced by the geometry of the Fermi surface. When the system is hole doped into the VHS regime, the Fermi surface reconstructs into triangular pockets, as shown in Fig.~\ref{fig:FermiSurfNesting}(b). In this geometry, different segments of the pockets become locally parallel and are connected by characteristic finite wavevectors $\mathbf q_{\mathrm{nesting}}$, highlighted in the zoomed-in panel. This Fermi-surface geometry naturally favors nesting between distinct low-energy regions, thereby favoring a CDW-like ordering instability near the VHS regime.
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=8.5cm]{Figure2_FS_nesting_v4.eps}\vspace{-3mm}
+\caption{Fermi surfaces of rhombohedral hexalayer graphene near the $K$ valley at displacement field $D=-160$\,mV/nm for doping of (a) $n = -0.76 \times 10^{12}\,\mathrm{cm}^{-2}$, far from the VHS, and (b) $n = -0.12 \times 10^{12}\,\mathrm{cm}^{-2}$, near the VHS. The zoomed-in panel illustrates the approximate nesting condition of the near-VHS Fermi surface at wavevector ${\vb*{q}}_{\mathrm{nesting}}$.
+}
+\label{fig:FermiSurfNesting}
+\end{figure}
+
+To quantify this instability, we evaluate the static charge susceptibility within the generalized Lindhard formalism in the non-interacting limit [see Appendix \ref{app:derivationFreeEnergy}],
+\begin{align}\label{eq:susceptibility}
+\chi({\vb*{q}}) =
+\sum_{\mathbf{k},m,n}
+|\left\langle u_{m,\mathbf k+\mathbf q} \middle| u_{n,\mathbf k}\right\rangle|^2
+\frac{f(\epsilon_{m,\mathbf{k}})-f(\epsilon_{n,\mathbf{k}+{\vb*{q}}})}
+{\epsilon_{n,\mathbf{k}+{\vb*{q}}}-\epsilon_{m,\mathbf{k}}+i\eta},
+\end{align}
+where $m$ and $n$ label band indices, $f(\epsilon)$ is the Fermi--Dirac distribution function, and $\eta$ is a small \textit{ad hoc} broadening parameter introduced to regularize the susceptibility. The form factor $\left\langle u_{m,\mathbf k+\mathbf q} \middle| u_{n,\mathbf k}\right\rangle$ describes the overlap between eigenstates in the corresponding bands and captures the important quantum-geometric effects present in RMG\,\cite{parramartinez2025band, jahin2026enhanced}. 
+
+Based on the susceptibility, we formulate an effective Ginzburg--Landau theory for the electronic order and its associated phase transition. For simplicity, we retain only the charge order associated with the dominant nesting wavevector $\mathbf q_{\mathrm{nesting}}$, represented by the order parameter $\psi_{\vb*{q}}$. Although the microscopic details of the electronic interactions and wavefunctions may influence the precise ordering wavevector, these details do not affect the phenomenological model or the conclusions of the later sections. The corresponding electronic free energy takes the form
+\begin{align}\label{eq:electronFreeEnergy}
+\mathcal{F}_{\rm ele} =
+a(T,n)\abs{\psi_{\vb*{q}}}^2 + b\abs{\psi_{\vb*{q}}}^4,
+\end{align}
+with the second-order coefficient [see Appendix \ref{app:derivationFreeEnergy} for the derivation]
+\begin{align}\label{eq:electronCoefficient}
+a(T,n) = \frac{1}{V_{\vb*{q}}} - \chi_{\vb*{q}}(T,n),
+\end{align}
+where $V_{\vb*{q}}$ denotes the effective electronic interaction at momentum $\vb*{q}$ after integrating out the high-energy degrees of freedom. In this phenomenological description, we neglect the orbital dependence of the interaction $V_{\vb*{q}}$ and treat it as a constant value across all orbitals [see Appendix \ref{app:derivationFreeEnergy} for the detailed model parameters]. As in a standard second-order phase transition, the sign of the coefficient $a(T,n)$ determines whether the electronic order $\psi_{\vb*{q}}$ breaks symmetry, controlled by the relative strength between the interaction and $\chi_{\vb*{q}}(T,n)$. When $\chi_{\vb*{q}}(T,n)$ is enhanced, as it typically is near a VHS or under a favorable nesting condition, and exceeds $1/V_{\vb*{q}}$, the coefficient $a(T,n)$ becomes negative. The system then stabilizes an electronic order that breaks translational and rotational symmetry. Within this framework, we identify such a dominant or subleading density-wave instability as the microscopic origin of the anisotropic stripe-like state recently observed in transport experiments\,\cite{qin2025extreme,morissette2025superconductivity, zhao2026hysteretical}.
+
+
+\begin{figure} [!b]
+\centering 
+\includegraphics[width=8.5cm]{Figure4_lattice_instability_v5.eps}\vspace{-2mm}
+\caption{(a) Schematic of the outer-layer shear mode in rhombohedral graphene. The A and B sublattices are denoted by filled and open circles, respectively, and the top layer is displaced with an amplitude modulated in space by wavevector $\vb*{q}$. (b) DFT-calculated energy landscape associated with the shear-mode lattice distortion in rhombohedral hexalayer graphene, comparing the top-layer shear mode (filled squares) and the outer-layer shear mode (open circles). Dashed curves show the corresponding sixth-order phenomenological fits used in our simulations.
+}
+\label{fig:latticeInstability} 
+\end{figure}
+
+Beyond the spontaneous symmetry breaking discussed above, recent experiments have uncovered pronounced first-order hysteresis in the stripe states. This hysteresis is highly reproducible under repeated scans along both the temperature and doping axes\,\cite{qin2025extreme, zhao2026hysteretical}, strongly suggesting that the system hosts multiple metastable states. An important feature is that the hysteresis extends into doping regimes beyond the strongly correlated flat-band region\,\cite{zhao2026hysteretical}. This observation implies that the charge-order instability itself, which is strongly doping dependent, is unlikely to be solely responsible for the full hysteretic behavior. We therefore propose that the electronic charge order is coupled to an additional lattice degree of freedom, a possibility that is broadly consistent with phenomena observed in graphene-based systems\,\cite{zan2024electron,chen2024strong,li2024evolution,birkbeck2025quantum,chen2018emergence, na2019direct}. In particular, we emphasize that the lattice is intrinsically soft and that its long-wavelength acoustic phonons are susceptible to strong anharmonic effects, owing both to the unstable crystal structure of rhombohedral graphene itself and to interfacial effects\,\cite{singh2026stacking}. 
+
+As a proof of principle, we present the first-principles simulations of the inter-block coupling energy for representative phonon modes in rhombohedral hexalayer graphene. We first consider a layer-shearing phonon mode in which the two outermost layers move together against the middle four layers, as illustrated in Fig.~\ref{fig:latticeInstability}(a). This displacement reflects the lattice instability towards the Bernal configuration. In these calculations, we consider a long-wavelength distortion with wavevector $q_x\sim 1/80$. Although this wavevector does not yet coincide with the Fermi-surface nesting wavevector discussed in Fig.~\ref{fig:FermiSurfNesting}, because of the limitation imposed by accessible supercell sizes [see Appendix \ref{app:DFT} for details], it nevertheless captures the qualitative form of the lattice potential relevant to our phenomenological model. As shown in Fig.~\ref{fig:latticeInstability}(b), the resulting energy landscape is strongly anharmonic: the second metastable state has an energy comparable to that of the relaxed equilibrium state, yielding a potential barrier comparable to the harmonic trapping scale. (We also note that the distortion amplitude around $X \sim 0.5\,a$ remains far from the Bernal structure, which would correspond to a substantially lower energy.)  
+
+Similarly, we further examine a second shear mode in which only the top layer is displaced relative to the bottom five layers. This mode exhibits even stronger anharmonicity, as shown in Fig.~\ref{fig:latticeInstability}(b), because the lattice potential confining a single layer is shallower and more easily evolves toward a Bernal-like structure among the top three layers. As the distortion increases further, the energy landscape develops multiple local minima. In principle, each of these metastable configurations could support an independent hysteretic response, provided that external conditions are sufficient to overcome the corresponding barriers.
+
+
+
+
+\section{Two-Order Phenomenological Model for Rhombohedral Hexalayer Graphene}
+
+Because rhombohedral graphene supports many possible lattice-vibration and distortion channels, we do not restrict the phenomenological theory to a very specific shear mode, which could be contributed by multiple ones. Here, we only consider the lowest-order anharmonic expansion of the lattice potential, which leads to a sixth-order lattice free energy:
+\begin{align}\label{eq:latticePotential}
+\mathcal{F}_{\rm lat} =
+\alpha \abs{X_{\vb*{q}}}^2 + \beta \abs{X_{\vb*{q}}}^4 + \gamma \abs{X_{\vb*{q}}}^6 ,
+\end{align}
+where $X_{\vb*{q}}$ denotes a generic lattice distortion at wavevector $\vb*{q}_{\rm nesting}$, and the higher-order terms encode the intrinsic anharmonicity. The coefficients $\alpha$, $\beta$, and $\gamma$ are treated as phenomenological parameters controlled by temperature, and their values are chosen to be consistent with both the experimental hysteresis behavior and the DFT energy landscape [see Appendix \ref{app:latticePotential} for details]. In the present work, the potential in Eq.~\eqref{eq:latticePotential} is designed to capture only the nearest metastable state at finite $X_{\vb*{q}}$ [see the dashed line in Fig.~\ref{fig:latticeInstability}(b)], which is sufficient for our purposes here. A more microscopic treatment, including multiple metastable structures, is left for future work aimed at predicting electronic control of structure.
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=8.5cm]{Figure5_two_order_scape_v5.eps}\vspace{-3mm}
+\caption{ (a,b) Free-energy landscape $\mathcal{F}(\psi, X)$ in the space of electronic order $\psi$ and lattice order $X$ without electron-lattice coupling ($g=0$), shown for the cases of (a) no electronic order and (b) finite electronic order. The top and left insets show the corresponding $\mathcal{F}_{\rm ele}$ and $\mathcal{F}_{\rm lat}$, obtained from the horizontal and vertical cuts marked by dashed lines. The cyan circles indicate local minima of the free-energy landscape and thus metastable electron-lattice states. (c,d) Same as in (a,b), but for finite electron-lattice coupling $g$.
+}
+\label{fig:potentialLandscape}
+\end{figure}
+
+
+In the absence of electron-lattice coupling, the two-order phenomenological model $\mathcal{F}=\mathcal{F}_{\rm ele}+\mathcal{F}_{\rm lat}$ gives rise to the potential landscape illustrated shown in Figs.~\ref{fig:potentialLandscape}(a) and (b). When the electronic sector is not ordered, corresponding to $a(T,n)>0$ in Eq.~\eqref{eq:electronFreeEnergy}, the landscape along the electronic-order direction, \textit{i.e.}~the horizontal cut in Fig.~\ref{fig:potentialLandscape}(a), has a single minimum at $\psi_{\vb*{q}}=0$. At the same time, the lattice sector, \textit{i.e.}~the vertical cut in Fig.~\ref{fig:potentialLandscape}(a), retains three local minima because of the anharmonic lattice potential. As a result, the full two-order landscape contains three metastable states, mimicking the lowest-order fitting of the lattice potential [the dashed line in Fig.~\ref{fig:latticeInstability}(b)]. Once the electronic order is established, $\mathcal{F}_{\rm ele}$ develops the familiar Mexican-hat structure with two symmetry-breaking minima. Combined with the anharmonic lattice potential, this expands the number of metastable states to six, which are adiabatically connected to the three states in Fig.~\ref{fig:potentialLandscape}(a). The evolution of the system among these local minima under changing external conditions determines the electronic states stabilized in the system.
+
+
+The leading-order coupling between the stripe CDW and the lattice distortion is linear and momentum conserving, in the form of $\mathcal{F}_{\rm ele\text{-}lat} = \lambda_{\vb*{q}} \psi_{-\vb*{q}} X_{\vb*{q}}$ [see Appendix \ref{app:derivationFreeEnergy}]. Once this coupling term $\mathcal{F}_{\rm ele\text{-}lat}$ is included, the energy landscape is modified as illustrated in Fig.~\ref{fig:potentialLandscape}(c). When the electronic sector is not spontaneously ordered, the coupling simply locks the symmetry of $\psi_{-\vb*{q}}$ to that of $X_{\vb*{q}}$, where the electronic order mirrors the hidden lattice order. The situation changes qualitatively once the electronic order becomes sufficiently strong. In that regime, the six distinct metastable states shown in Fig.~\ref{fig:potentialLandscape}(b) collapse into four, as illustrated in Fig.~\ref{fig:potentialLandscape}(d). This restructuring of the metastable landscape, including the adiabatic connection between unordered and ordered states, underlies the hysteretic behavior discussed later in Sec.~\ref{sec:dopingHysteresis}.
+
+We note that, for a given lattice order $X_{\vb*{q}}$, the coupling constant $\lambda_{\vb*{q}}$ should not be regarded microscopically as a universal constant. Instead, it is an effective quantity derived from the underlying electron-lattice interaction vertex and, more generally, should be represented as a matrix $g_{\vb*{k}\vb*{q}}^{(mn)}$ that depends on both momentum and band indices. To gain qualitative insight into this structure, we use the band-resolved deformation profile $|\partial E_n/\partial X_{\vb*{q}}|$ as a relative measure. Fig.~\ref{fig: Figure3_shear_mode}(a) shows the distribution of this deformation across different bands for the top-layer shear mode $X_{\vb*{q}}$ illustrated in Fig.~\ref{fig:latticeInstability}. Within the flat-band regime, the lattice distortion acts predominantly on the first valence band on the hole-doped side. Although the present phenomenological treatment does not attempt to decompose the charge order into separate bands, this projection suggests that the effective coupling weakens as the doping moves away from the VHS [also see Fig.~\ref{fig: Figure3_shear_mode}(b)]. In other words, the electronic order associated with the top band is more efficiently imprinted into the lattice potential through $\mathcal{F}_{\rm ele\text{-}lat}$ than the corresponding order associated with the second band.
+
+\begin{figure} [!t]
+\centering 
+\includegraphics[width=8.5cm]{Figure3_shear_mode.eps} \vspace{-3mm}
+\caption{(a) Band-resolved deformation potential $|\partial E_n/\partial X_{\vb*{q}}|$ for the top-layer shear-mode lattice distortion shown in Fig.~\ref{fig:latticeInstability}(a), plotted along the $k_x$ cut through valley $K$. (b) Deformation-potential profile projected onto the top valence band in the $k_x$-$k_y$ momentum space.}
+\label{fig: Figure3_shear_mode} 
+\end{figure}
+
+
+
+
+\begin{figure*} [!t]
+\centering 
+\includegraphics[width=18cm]{Figure6_hyst_v14.eps}\vspace{-3mm}
+\caption{(a) Doping dependence of the electronic susceptibility $\chi$ at $T=6.4$\,K. The VHS and $n_{\rm bump}$ are indicated by the shaded regimes. The inset shows the corresponding low-energy band structure in the relevant doping range, with the VHS and $n_{\rm bump}$ highlighted. (b) Doping dependence of the corresponding quadratic coefficient $a(T,n)$ under the same conditions. The zoomed-in panel highlights the sign change near the VHS induced by the enhanced susceptibility. (c,d) Forward and backward doping sweeps of (c) the electronic order $\psi_{\vb*{q}}$ and (d) the lattice order $X_{\vb*{q}}$, showing the hysteresis triggered by the VHS. The non-monotonic bump near $n_{\rm bump}$ during the backward sweep is marked. (e) Hysteresis amplitude $|\psi_{\rm bwd}-\psi_{\rm fwd}|$ in the doping-temperature plane, showing a dome-like structure near $n_{\rm bump}$. The dashed line marks the boundary of the hysteretic region. 
+}
+\label{fig:dopingHysteresis}
+\end{figure*}
+
+\section{Doping-Induced Hysteresis and Anisotropy}\label{sec:dopingHysteresis}
+
+The multi-metastable-state potential landscape of this two-order model governs the evolution of the anisotropic stripe order as external conditions are varied. Because the electronic free energy in Eq.~\eqref{eq:electronFreeEnergy} undergoes spontaneous symmetry breaking when the second-order coefficient $a(n,T)$ becomes negative, the resulting order is highly sensitive to both carrier doping $n$ and temperature $T$. These two parameters can be tuned precisely in experiments.
+
+As discussed above, the DOS is maximized near the VHS associated with the top band, and this regime coincides with the development of Fermi-surface nesting between the two triangular pockets. Together, these two effects strongly enhance the susceptibility $\chi$, as shown in Fig.~\ref{fig:dopingHysteresis}(a). In the presence of a phenomenological Coulomb interaction $V_q$, this singular enhancement drives $a(T,n)$ negative and triggers a large electronic order $\psi_q$ at the nesting wavevector $q$. Such an order parameter should be directly measureable by x-ray scattering or scanning-tunneling microscopy (STM). In transport experiments, this electronic order $\psi_q$ manifests indirectly as by the insulating behavior in $R_{xx}$ along the symmetry-breaking direction (denoted as the $x$ direction here, without loss of generality), while the resistance $R_{yy}$ along the orthogonal direction does not have to increase comparably. This naturally produces the anisotropic behavior recently observed near this VHS\,\cite{zhao2026hysteretical}. Because the electronic order is coupled to the lattice degrees of freedom, the onset of stripe order also induces a finite lattice order [see Fig.~\ref{fig:potentialLandscape}(d)]. The resulting lattice distortion then relaxes into one of the two low-symmetry metastable states [see the illustration in Appendix \ref{app:FreeEnergyEvolution}].
+
+When the doping is tuned away from the VHS, the susceptibility $\chi$ rapidly decreases, as shown in Fig.~\ref{fig:dopingHysteresis}(a). Consequently, the second-order coefficient $a(T,n)$ in the electronic free energy quickly becomes positive as the doping is reduced. For a conventional second-order CDW transition, this would imply that the stripe order disappears immediately at the critical doping $n_c$ defined by $a(T,n_c)\sim 0$. Here, however, lattice anharmonicity qualitatively changes that expectation. Once the lattice order has formed, it cannot smoothly return to the high-symmetry state. Instead, as illustrated in Fig.~\ref{fig:potentialLandscape}(c), the lattice distortion becomes trapped in a metastable low-symmetry configuration even after the electronic instability has disappeared [i.e.~$a(T,n)> 0$]. This metastability allows the lattice order to persist over a broad doping range in which a CDW would otherwise not form spontaneously. Through electron-lattice coupling, the surviving lattice order continues to sustain a strong electronic order [see the illustration in Appendix \ref{app:FreeEnergyEvolution}], which manifests experimentally as an anisotropic insulating state away from the VHS\,\cite{zhao2026hysteretical}. The resulting hysteretic behavior is therefore a direct consequence of lattice anharmonicity, and it is triggered only when the doping has crossed the VHS; otherwise, it does not emerge, in agreement experimental observations\,\cite{zhao2026hysteretical}.
+
+Although the mechanism underlying this hysteretic behavior is similar to that responsible for the recently observed nonlinear-Hall anomaly in TaIrTe$_4$\,\cite{tang2026bistable}, the anisotropic hysteresis in RMG carries a distinctive signature of its own electronic structure. In the regime where electronic order cannot arise spontaneously [i.e.~$a(T,n)> 0$], the coefficient $a(T,n)$ controls the curvature of the free-energy landscape along the $\psi$ direction in Fig.~\ref{fig:potentialLandscape}(c). As a result, a smaller value of $a(T,n)$ allows the same lattice order $X$ to induce a stronger electronic order. In other words, the amplitude of the electronic order parameter $\psi$, which can be inferred from $R_{xx}$ in anisotropic transport, continues to encode the underlying electronic susceptibility through Eq.~\eqref{eq:electronCoefficient} even without spontaneous symmetry breaking. As mentioned in Sec.~\ref{sec:tightBinding}, a RMG-specific feature is the secondary enhancement of DOS and susceptibility arising from the band top of the lower band, denoted as $n_{\rm bump}$ in Fig.~\ref{fig:dopingHysteresis}(a), in addition to the dominant VHS. Although this secondary enhancement is not strong enough to drive a spontaneous CDW order, it is nevertheless imprinted in the increase of $\psi$ within the hysteretic regime. The resulting non-monotonic behavior reflects the proximity to an incipient electronic instability at lower filling, highlights the distinctive multi-flat-band structure of RMG, and is consistent with the experimentally measured hysteresis in $R_{xx}$\,\cite{zhao2026hysteretical}.
+
+Because both the anisotropy and the doping hysteresis originate from the electronic susceptibility of the low-energy states, they are naturally sensitive to temperature through the thermal redistribution of electronic occupation. As the temperature rises, the susceptibility $\chi$ near the VHS is rapidly suppressed. This in turn drives the GL coefficient $a(T,n)$ of the CDW order from negative to positive, eliminating the spontaneous CDW instability and causing the anisotropy to disappear at a critical temperature $T_c$. (For the specific set of model parameters used here, we obtain $T_c = 7.6$\,K; however, the precise value is not essential, since the main point is the general qualitative behavior.) At the same time, increasing temperature also suppresses the susceptibility at $n_{\rm bump}$, corresponding to the top of the second band. Consequently, both the amplitude of the hysteresis, reflected in $R_{xx}$, and its extent along the doping axis decrease as the system approaches $T_c$. Together, these effects produce a dome-like structure in the $T$-$n$ phase diagram.
+
+
+\section{Magnetic Suppression of Charge Order}\label{sec:magneticField}
+
+In our framework, the stripe-like charge order near the VHS is governed by the charge susceptibility $\chi({\vb*{q}})$, which is set mainly by the Fermi-surface nesting condition. A direct implication is that any external perturbation that distorts or weakens this nesting should suppress the susceptibility and thereby reduce the anisotropy. This prediction can be tested experimentally through the dependence on magnetic field or on spin-valley polarization of the electronic states, thereby providing a direct check of the mechanism proposed above.
+
+
+
+ 
+Here, we consider a weak perpendicular field $B_{\perp}$, which couples to the low-energy bands. At leading order, the field couples through both orbital and spin Zeeman terms, producing the linear energy shift
+\begin{equation}
+\Delta E_{n \sigma \tau}(\mathbf{k}) = - m_{n\tau}^{z}(\mathbf{k}) B_{\perp} + \frac{\sigma}{2} g \mu_B B_{\perp}\,,
+\end{equation}
+where $m_{n\tau}^{z}(\mathbf{k})$ is the band-resolved out-of-plane orbital magnetic moment\,\cite{resta06om,xiao06prlberry}, $\tau=\pm$ labels the two valleys, and $\sigma=\pm1$ labels the spin. The simulated distribution of orbital magnetic moment is shown in Fig.~\ref{fig:magneticFieldChi}(a). Because time-reversal symmetry requires $m_{n,+}^{z}(\mathbf{k})=-m_{n,-}^{z}(-\mathbf{k})$, so the orbital Zeeman term shifts the two valleys in opposite directions. While both orbital and spin moments contribute to this Zeeman energy offset, the valley-contrasting orbital response is especially important in RMG, where the orbital magnetic moment can substantially exceed the bare spin-Zeeman contribution\,\cite{huang2023spin}.
+
+The energy offset induced by $B_\perp$ suppresses the electronic susceptibility through two complementary mechanisms. First, the original VHS in the DOS is split into two smaller peaks associated with two different valleys, thereby lowering the DOS at the VHS. Second, the relative displacement of the valley-resolved Fermi surfaces distorts the original nesting condition, so that the CDW ordering wavevector can no longer efficiently connect the relevant low-energy states in both valleys simultaneously. As illustrated in Fig.~\ref{fig:magneticFieldChi}(b), when the valley $K$ sector is tuned to the VHS and develops a nested Fermi surface, the valley $K'$ sector is already detuned away from the VHS and no longer remains nested, thereby blocking part of the available scattering channels. The combined effect is a suppression of the charge susceptibility $\chi({\vb*{q}})$ and a shift of the VHS towards the hole doping side, as the magnetic field increases [see Fig.~\ref{fig:magneticFieldChi}(c)]. Because the orbital magnetic moments and the nesting condition are most strongly developed near the VHS, the magnetic-field-induced suppression of susceptibility is correspondingly more pronounced there than near $n_{\rm bump}$.
+
+\begin{figure} [!t]
+\centering 
+\includegraphics[width=8.5cm]{Figure7_magnetic_dep_v13.eps}\vspace{-3mm}
+\caption{
+(a) Distribution of orbital magnetic moment across three low-energy bands for $K$ (left) and $K^\prime$ (right) valleys, respectively.(b) Fermi surfaces near the VHS without magnetic field (left) and under magnetic field $B_\perp=5$\,T. The red and blue color represents spin up and down sectors. (c) Real part of the electronic susceptibility as a function of doping and magnetic field at $T=6.4$\,K, showing the progressive suppression with increasing magnetic field. 
+}
+\label{fig:magneticFieldChi}
+\end{figure}
+
+This reduced susceptibility is then translated into an increase in the quadratic coefficient $a(n)$ of the electronic free energy $\mathcal{F}_{\rm ele}$ in Eq.~\eqref{eq:electronFreeEnergy}. Since the magnetic-field effect on the susceptibility at $n_{\rm bump}$ is relatively weak, $a(n_{\rm bump})$ does not vary appreciably with magnetic field. In contrast, the rapid suppression of the $\chi({\vb*{q}})$ near the VHS drives $a(n_{\rm VHS})$ from negative to positive at $T=6.4$\,K [see Fig.~\ref{fig:magneticDepHyst}(a)], apart from the energy offset caused by the magnetic field. Once this occurs, the CDW order can no longer spontaneously develop near the VHS, and, accordingly, the hysteresis disappears at the corresponding critical magnetic field. 
+
+Figure \ref{fig:magneticDepHyst}(b) presents representative results at two different magnetic fields ($B_\perp=2$\,T and 8\,T) for $T=6.4$\,K. Compared with the zero-field hysteresis shown in Fig.~\ref{fig:dopingHysteresis}(b), the increasing magnetic field does not substantially modify the overall hysteresis loop, but weaken the electronic order. Once the magnetic field reaches a critical value of $B_\perp = 7.4$\,T, the hysteresis is completely suppressed. The hysteresis amplitude over a range of magnetic fields and doping values is summarized in Fig.~\ref{fig:magneticDepHyst}(c), which reveals a sharp field-induced boundary of the hysteretic regime. The onset of this hysteresis loop, which is trigger by the VHS, is pushed towards slightly higher doping regimes by the $B_\perp$. This evolution of the phase boundary and the share transition are consistent with experiment and further support the underlying CDW origin of the hysteretic anisotropy\,\cite{zhao2026hysteretical}. We also note that the actual critical field is expected to be significantly smaller than the value obtained in our simulation, because additional ferromagnetic interactions, not included in the model of Sec.~\ref{sec:tightBinding}, would further stabilize the spin-valley-polarized order that competes with the CDW.
+
+\begin{figure} [!t]
+\centering 
+\includegraphics[width=\columnwidth]{Figure8_magnetic_dep2_v12.eps}\vspace{-2mm}
+\caption{(a) Quadratic coefficient $a(T,n)$ of the electronic free energy in the doping-Zeeman-gap plane. (b) Doping hysteresis loops of the electronic order for $B_\perp = 2$\,T to $8$\,T. (c) Electronic hysteresis amplitude $|\psi_{\mathrm{fwd}}-\psi_{\mathrm{bwd}}|$ in the same parameter space as (a). The hysteretic region collapses at the critical field $B = 7.4$\,T. The two loops presented in (b) are highlighted here. 
+}
+\label{fig:magneticDepHyst}
+\end{figure}
+
+In addition to an external magnetic field, spontaneous spin and valley polarization can likewise suppress the CDW instability by acting as an effective internal Zeeman field. In the fully spin- and valley-polarized regime, such as the quarter-metal phase in RMG, only a single spin--valley component remains over a broad energy range near the Fermi level\,\cite{huang2023spin, koh2024correlated, parramartinez2025band, miao2026various}. As a result, the available DOS is reduced to about $25\%$ of its unpolarized value. Because the charge susceptibility scales with the area of the low-energy phase space available for scattering, $\chi({\vb*{q}})$ in Eq.~\eqref{eq:susceptibility} should be suppressed accordingly by approximately the same factor. Given the fact that the charge order remains tunable over a range of doping and magnetic field, the associated CDW instability is unlikely to be very strong even near the VHS. It then follows that, in the spin-valley-polarized regime, the residual charge susceptibility is insufficient to drive the phase transition. Accordingly, both the electronic order and the associated lattice-induced hysteresis disappear once the system becomes polarized. This behavior also provides a way to distinguish the present charge-order scenario from recently proposed metallic Wigner crystal mechanisms, for which polarization or magnetic field would typically favor localization rather than suppress the ordered state\,\cite{dong2026crystals,feng2026self}.
+
+This suppression of a competing order by internal magnetic polarization is closely related to the Jaccarino--Peter effect widely observed in superconductors, where an external magnetic field compensates an internal field and leads to the re-entrance of superconductivity\,\cite{jaccarino1962ultra,meul1984observation,ran2019extreme,helm2024field,yang2026field,vu2026re}. By analogy, when the subleading charge order is suppressed by an internal magnetic field, a similar re-entrance effect should also occur for the charge order. Specifically, if an external magnetic field is applied to the spin-valley-polarized state along the direction opposite to the internal polarization, it can partially cancel the internal field. The compensation condition is reached near the field where the spin-valley polarization flips, which we denote by $B_c$. Around this critical field, the previously suppressed subleading charge order should reappear, giving rise to a re-entrant hysteretic regime analogous to the Jaccarino--Peter effect. This hysteresis is expected to be confined to a narrow window near $B_c$, because further increasing the magnetic field stabilizes the opposite spin-valley polarization and suppresses the charge order again. Such a re-entrance phenomenon near $B_c$ is consistent with the recent experiment\,\cite{zhao2026hysteretical}.
+
+
+
+
+\section{Discussions}
+
+The charge-order and phonon-anharmonicity framework proposed in this paper provides a unified explanation for the recently observed anisotropic resistivity\,\cite{qin2025extreme,morissette2025superconductivity}, doping-induced hysteresis, and the incompatibility of these phenomena with magnetic field or polarization\,\cite{zhao2026hysteretical}. Although the present model is phenomenological and does not exclude alternative mechanisms, it is microscopically grounded in two key ingredients: Fermi-surface nesting and a metastable lattice structure. Together, these ingredients suggest a broader physical setting in which similar behavior may arise. More generally, 2D flat-band materials can provide such a setting because strong electronic correlations may coexist with interfacial lattice instability. In this case, if the electron-lattice coupling is sufficiently strong to overcome the barriers between different metastable lattice states, analogous anisotropy and hysteresis should be expected. A representative example is TaIrTe$_4$, where a similar doping-induced stripe order and hysteresis have been observed, with the triggering doping occurring at a VHS and with direct evidence for lattice bistability\,\cite{tang2026bistable}. In graphene-based systems, doping-induced hysteresis has also been reported in bilayer graphene-hBN heterostructures and tetrahedral graphene systems\,\cite{zheng2023electronic, singh2026stacking}. In those systems, the hysteresis has been attributed to lattice metastability either between graphene layers or between graphene and the substrates, although direct evidence remains limited. While these materials may not exhibit the same anisotropic stripe order discussed in this paper, other electronic instabilities, including excitonic order and ferroelectricity, have been suggested to play the dominant role and to couple to the lattice.
+
+More importantly, the experimental observation of the mechanism described above provides an indirect evidence that electron-lattice coupling plays an important role in RMG. This view is consistent with recent evidence for strong polaronic dressing in twisted bilayer graphene, another flat-band 2D platform\,\cite{chen2024strong,li2024evolution,birkbeck2025quantum}. In RMG, multiple competing orders have now been observed, including fractional Chern insulating states, orbital ferromagnetism, anisotropic stripe order, and chiral superconductivity. Their coexistence and competition resemble the intertwined phenomena widely discussed in cuprates\,\cite{fradkin2015colloquium, davis2013concepts, ghiringhelli2012long, arpaia2019dynamical, comin2015symmetry, lee2020spectroscopic}, and likewise raise the question of the origin of superconductivity\,\cite{jiang2019superconductivity, chung2020plaquette}. On the one hand, ferromagnetic fluctuations are believed to favor spin-triplet pairing, although whether a true long-range ordered state can be established remains to be verified by large-scale numerical simulations\,\cite{xu2024coexistence, jiang2021ground}. On the other hand, electron-phonon coupling has already been shown to be sufficient to induce spin-triplet superconductivity in RMG within weak-coupling BCS theory\,\cite{zan2024electron}. These two pairing mechanisms are not mutually exclusive: in fact, large-scale DMRG simulations of strongly correlated models have shown that the cooperation between strong electronic interactions and phonon-mediated pairing can stabilize $p$-wave superconductivity in quarter-filled 1D systems\,\cite{qu2022spin}. This result may be connected to the recent observation that spin-triplet pairing is enhanced when a quasi-1D stripe pattern forms in the normal state\,\cite{qin2025extreme}. However, detailed numerical simulations specific to the RMG setting will still be needed before any firm conclusion can be drawn.
+
+While our theoretical framework is consistent with existing experimental observations, direct experimental confirmation of charge modulation and electron-lattice coupling is still needed. One important direction would be to look for stripe patterns in STM measurements or band folding in nanoARPES measurements, although both types of measurements are generally challenging in devices that require top and bottom gating. Another route is to probe polaronic dressing and phonon anharmonicity through Raman spectra, where they may appear as phonon softening and abrupt changes of phonon branches. A more indirect signature is the temperature dependence of resistivity. In general, linear temperature dependence is often regarded as evidence of phonon effects when the temperature is sufficiently higher than the relevant phonon energy. In RMG, however, this signature may be difficult to identify directly if the phonon anharmonicity is strong, because superlinear behavior arising from anharmonic energy levels can mask the distinction between linear and higher-order temperature dependences. Finally, from the perspective of sample engineering, lattice anharmonicity should be sensitive to the substrate environment. As a result, both the substrate material and the alignment angle are expected to have a strong influence on the observed hysteresis and anisotropy. These considerations suggest several concrete experimental directions that can test, verify, or falsify the present framework.
+
+
+
+\section*{Acknowledgements}
+We thank Shuhan Ding for insightful discussions. This work is supported by the Air Force Office of Scientific Research Young Investigator Program under grant FA9550-23-1-0153. The simulations presented in this paper used resources of the National Energy Research Scientific Computing Center, a U.S. Department of Energy Office of Science User Facility located at Lawrence Berkeley National Laboratory, operated under Contract No. DE-AC02-05CH11231.
+
+
+
+
+
+
+
+
+
+\appendix
+
+
+\section{Derivation of the Electronic Free-Energy Model}\label{app:derivationFreeEnergy}
+
+In this section, we derive the effective electronic free-energy model  of Eq.~\eqref{eq:electronFreeEnergy} from a microscopic electronic description. For convenience, we rewrite the Hamiltonian in Eqs.~\eqref{eq:nonintHam}-\eqref{eq:nonintHamDfield} into reciprocal space as
+\begin{equation}
+\mathcal{H}_{\rm RMG}=\sum_{ l,\mathbf{k},\sigma}\epsilon_{l\mathbf{k}}\,c^\dagger_{l\mathbf{k}\sigma}c_{l\mathbf{k}\sigma}\,,
+\end{equation}
+where $c_{l\mathbf{k}\sigma}$ is the Fourier transform of $c_{lm\alpha \sigma}$ and the valley indices are absorbed into momentum $\mathbf{k}$. In the band representation, $\epsilon_{l\mathbf{k}}$ denotes the diagonal dispersion of the noninteracting electrons. Here, we do not consider the spin-orbit coupling, leading to degenerate band dispersion, unless with the external Zeeman field as discussed in Sec.~\ref{sec:magneticField}.
+
+To capture the low-energy density-wave-like ordering instability, we then introduce an effective interaction in the density channel. This term incorporates both the bare Coulomb interactions among electrons and the residual interactions mediated by high-energy phonons. It takes the form
+\begin{equation}\label{eq:appInteraction}
+\mathcal{H}_{\mathrm{int}}=\frac12\sum_{\mathbf q}V_{\mathbf q}\rho_{-\mathbf q}\rho_{\mathbf q},
+\end{equation}
+where $V_{\mathbf q}$ denotes the effective interaction strength and $\rho_{\mathbf q}$ is the density operator projected onto the band basis,
+\begin{equation}
+\rho_{\mathbf q}=\sum_{\mathbf k,l^\prime,l,\sigma}\left\langle u_{l^\prime,\mathbf k+\mathbf q}\middle|u_{l,\mathbf k}\right\rangle c^\dagger_{l^\prime,\mathbf{k+q},\sigma} c_{l\mathbf{k}\sigma}.
+\end{equation}
+Here, the form factor encodes the structure of the Wannier-basis wavefunctions and thus carries the information of the non-trivial quantum geometry in RMG\,\cite{parramartinez2025band, jahin2026enhanced}.
+
+To obtain the effective free energy, we introduce a set of mean-field order parameters $\{\psi_{\mathbf q}\}$ in the density channel and decouple the interaction term through a Hubbard--Stratonovich (HS) transformation,
+\begin{equation}
+e^{-\beta \mathcal{H}_{\mathrm{int}}}=\prod_{\mathbf q}\int\mathcal D[\psi_{\mathbf q}]e^{-S[d,d^\dagger,\psi_{\mathbf q}]} ,
+\end{equation}
+with the auxiliary-field action
+\begin{equation}\label{eq:appHSField}
+S[d,d^\dagger,\psi_{\mathbf q}]=\frac{|\psi_{\mathbf q}|^2}{2V_{\mathbf q}}+\psi_{-\mathbf q}\rho_{\mathbf q}.
+\end{equation} 
+Integrating out the electronic degrees of freedom then gives the effective electronic free energy,
+\begin{equation}\label{eq:effAction}
+e^{-\beta \mathcal{F}_{\mathrm{ele}}}=\int \mathcal D[d,d^\dagger]e^{-S[d,d^\dagger,\psi_{\mathbf q}]} ,
+\end{equation}
+or, equivalently,
+\begin{equation}\label{eq:effFreeEnergy}
+\mathcal F_{\mathrm{ele}}=\sum_{\mathbf q}\frac{|\psi_{\mathbf q}|^2}{2V_{\mathbf q}}-T\,\mathrm{Tr}\ln\left(G_0^{-1}+\Sigma_\psi\right).
+\end{equation}
+Here, $G_0$ is the Green's function of the noninteracting electrons governed by $\mathcal{H}$ and $\Sigma_\psi=\psi_{-\mathbf q}\left\langle u_{m,\mathbf k+\mathbf q}\middle|u_{n,\mathbf k}\right\rangle \delta_{\sigma\sigma'}$ describes the scattering vertex generated by the density-wave order parameter.
+
+In the weak-coupling limit, expanding the Eq.~\eqref{eq:effFreeEnergy} to the leading order yields
+\begin{equation}\label{eq:appQuadraticTrace}
+\mathcal F_{\mathrm{ele}}\approx\sum_{\mathbf q}\frac{|\psi_{\mathbf q}|^2}{2V_{\mathbf q}}-\frac{1}{2}\sum_{\mathbf q}\chi_{\vb*{q}}|\psi_{\mathbf q}|^2.
+\end{equation}
+Here, the coefficient $\chi_{\vb*{q}}$ is precisely the susceptibility introduced in Eq.~\eqref{eq:susceptibility} of the main text,
+\begin{align}
+\chi({\vb*{q}}) =\sum_{\mathbf{k},m,n}|\left\langle u_{m,\mathbf k+\mathbf q} \middle| u_{n,\mathbf k}\right\rangle|^2\frac{f(\epsilon_{m,\mathbf{k}})-f(\epsilon_{n,\mathbf{k}+{\vb*{q}}})}{\epsilon_{n,\mathbf{k}+{\vb*{q}}}-\epsilon_{m,\mathbf{k}}+i\eta}\,.
+\end{align}
+The quadratic term therefore reproduces the electronic free-energy coefficient given in Eq.~\eqref{eq:electronCoefficient}, i.e.~$a_{\mathbf q}(T,n) = 1/V_{\vb*{q}} - \chi_{\vb*{q}}(T,n)$. In our calculations, we estimate the effective intra-valley interaction to be $V_{\vb*{q}} = 3.47$\,eV, a value of the same order as the critical Hubbard interaction reported in Ref.~\onlinecite{braz2024competing}. Retaining the next nonvanishing term in the expansion of Eq.~\eqref{eq:effFreeEnergy} produces the quartic contribution and leads to the Ginzburg--Landau free energy,
+\begin{equation}
+\mathcal F_{\mathrm{ele}}(T,n)=\sum_{\mathbf{q}}\left[a_{\mathbf q}|\psi_{\mathbf q}|^2+b_{\mathbf q}|\psi_{\mathbf q}|^4+\mathcal{O}(|\psi_{\mathbf q}|^6)\right]\,.
+\end{equation}
+ 
+In addition to the electronic free energy, we include a linear coupling to a lattice distortion, so that the full Hamiltonian becomes $\mathcal{H}=\mathcal{H}_{\rm RMG}+\mathcal{H}_{\mathrm{int}}+\mathcal{H}_{\mathrm{e-ph}}$. Here, $\mathcal{H}_{\mathrm{e-ph}}=\sum_{\mathbf q}g_{\mathbf q}X_{-\mathbf q}\rho_{\mathbf q}$, where $g_{\mathbf q}$ denotes the electron-phonon coupling strength projected onto the density operator.Because this coupling is linear, it can be incorporated into the HS transformation as an external source:
+\begin{equation}
+e^{-\beta (H_{\mathrm{int}}+H_{\mathrm{e\text{-}ph}})}
+=\prod_{\mathbf q}\int\mathcal D[\psi_{\mathbf q}] e^{-\frac{\left|\psi_{\mathbf q}+\lambda_{\mathbf q}X_{\mathbf q}\right|^2}{2V_{\mathbf q}}+\psi_{-\mathbf q}\rho_{\mathbf q}}\,.
+\end{equation}
+The corresponding action and free energy are therefore analogous to Eqs.~\eqref{eq:effAction}-\eqref{eq:appQuadraticTrace}, except for the shift induced by the lattice field. The resulting free energy becomes
+\begin{eqnarray}\label{eq:freeEnergyEPC}
+\mathcal F&\approx&\sum_{\mathbf q}\frac{\left|\psi_{\mathbf q}+\lambda_{\mathbf q}X_{\mathbf q}\right|^2}{2V_{\mathbf q}}+\frac{T}{2}\mathrm{Tr}\left( G_0\Sigma_\psi G_0\Sigma_\psi \right).\nonumber\\
+&=&\mathcal F_{\mathrm{ele}}-\sum_{\mathbf q} \lambda_{\vb*{q}} X_{\mathbf q}\psi_{-\mathbf q} + \sum_{\mathbf q}\frac{g_{\mathbf q}^2}{2V_{\mathbf q}}|X_{\mathbf q}|^2,
+\end{eqnarray}
+where $\lambda_{\vb*{q}} = g_{\vb*{q}} / V_{\mathbf q}$ is the renormalized coupling coefficient. In our calculation, we adopt $\lambda_{\vb*{q}} = 1.8$. 
+
+It is important to emphasize that Eq.~\eqref{eq:freeEnergyEPC} does not yet include the intrinsic lattice energy of the phonons, which is expected to be anharmonic, as discussed in the main text. This contribution will be treated separately in Appendix \ref{app:latticePotential}. Once the lattice potential is added, the quadratic term in $X_{\mathbf q}$ can be absorbed into the lattice sector, namely into the coefficient $\alpha$ of the lattice free-energy model [see Eq.~\eqref{eq:appLatticePotential}].
+
+Because the coupling is linear, the lattice displacement $X_{\mathbf q}$ is directly driven by the electronic order $\psi_{\mathbf q}$ at the same momentum. The hysteretic behavior encoded in the lattice memory is therefore transferred to the electronic order as well. Consequently, only the free-energy contribution associated with the nesting momentum is relevant for the phase transition discussed in the main text. For this reason, we retain only the single-momentum free energy in Eq.~\eqref{eq:electronFreeEnergy}.
+
+\section{First-Principles Simulations}\label{app:DFT}
+The lattice energy landscapes shown in Fig.~\ref{fig: Figure3_shear_mode} are obtained from the first-principles density functional theory calculations. We use the Vienna {\it Ab initio} Simulation Package (VASP)\,\cite{kresse_efficiency_1996,kresse_efficiency_1996} together with the projector augmented-wave (PAW) method\,\cite{paw} and the Perdew-Burke-Ernzerhof (PBE) generalized-gradient functional\,\cite{perdew1996}. To describe the interlayer van der Waals (vdW) interactions, we include the DFT-D3 corrections with Becke--Johnson damping (IVDW=12)\,\cite{grimme2010,grimme2011}. The calculations use a plane-wave kinetic-energy cutoff of 400\,eV, and an electronic convergence threshold of $10^{-6}$\,eV, a Gaussian smearing width of 0.05\,eV, and a $\Gamma$-centered $1\times6\times1$ $k$-mesh. We set the graphene lattice constant to $a=2.46$~\AA, the interlayer spacing to $d_0=3.35$~\AA, and include a $15$~\AA{} vacuum to suppress periodic images. The undistorted stack is first relaxed at fixed cell until all residual forces are below $0.01$\,eV/\AA, which defines the equilibrium configuration $X_{\vb*{q}}=0$. All distorted structures are then evaluated as static energies relative to this relaxed reference.
+
+The shear distortions are imposed in a rectangular supercell whose long axis lies along the zigzag direction, parallel to the $M$-$K$ line. This choice ensures that a longitudinal modulation along $M$-$K$ is commensurate with the supercell reciprocal vector. With $N_1=80$ unit cells along this axis, the supercell contains $1920$ carbon atoms, and the longest commensurate modulation corresponds to $q_x\sim1/80$ ($\lambda=N_1 a\approx197$~\AA). This wavevector is set by the tractability of the  supercell size. While it remains larger than the Fermi-surface nesting wavevector shown in Fig.~\ref{fig:FermiSurfNesting}, it still captures the qualitative structure of the long-wavelength shear potential. The distortion is introduced as a static layer-dependent in-plane displacement:
+\begin{equation}
+u_x(\ell, x) = e_\ell\, A \sin\left(\frac{2\pi x}{L_1} \right), \qquad u_y=u_z=0,
+\label{eq:appShearDisplacement}
+\end{equation}
+where $\ell$ is the layer index, $L_1=N_1 a$, and $A$ is the amplitude. The sign pattern $\{e_\ell\}$ selects the mode: $\vb*{e}=(+,-,-,-,-,-)$ for the single-layer shear and $\vb*{e}=(-,+,+,+,+,-)$ for the outer-layer shear shown in Fig.~\ref{fig:latticeInstability}(b). We scan 20 amplitudes from $A/a=0$ to $2.0$, with $X_{\vb*{q}}\equiv A$ measured in units of $a$.
+
+To isolate the inter-block coupling from the intra-layer elastic energy, we subtract matched single-block references that are displaced in phase by the same sinusoidal profile, i.e.~Eq.~\eqref{eq:appShearDisplacement}, in supercells of identical volume. In this way, the vacuum contribution and the intra-layer elastic cost cancel:
+\begin{align}
+E_{\rm inter}^{\,(1\text{-}5)} &= E_{6\rm L}^{(+,-,-,-,-,-)} - E_{1\rm L} - E_{5\rm L},\\
+E_{\rm inter}^{\,(2\text{-}4)} &= E_{6\rm L}^{(-,+,+,+,+,-)} - 2\,E_{1\rm L} - E_{4\rm L},
+\end{align}
+where $E_{n\rm L}(A)$ denotes the energy of an $n$-layer block displaced in phase. The residual $E_{\rm inter}(X_{\vb*{q}})$ is the energy associated with the inter-block interface(s) opened by the distortion. Both energy landscapes are strongly anharmonic, developing a second metastable minimum at finite $X_{\vb*{q}}$ whose energy is comparable to that of the relaxed state. 
+
+\section{Anharmonic Lattice Potential}\label{app:latticePotential}
+
+To construct a tractable description of the first-principles lattice-potential landscape shown in Fig.~\ref{fig:latticeInstability} of the main text, we adopt a Landau--Devonshire expansion that preserves its essential anharmonic structure. pecifically, we model the lattice potential by a sixth-order function as
+\begin{equation}\label{eq:appLatticePotential}
+\mathcal F_{\mathrm{lat}}(X_{\mathbf q}) = \alpha X_{\mathbf q}^2 + \beta  X_{\mathbf q}^4 + \gamma X_{\mathbf q}^6 .
+\end{equation}
+Throughout the following discussion, all parameters are taken to be dimensionless. For simplicity, we neglect the explicit temperature and doping dependence of the sixth-order term and absorb the overall scale of the lattice potential into the constant $\gamma$. This simplified form is sufficient for efficient minimization of the coupled electron--lattice free energy and for capturing the doping hysteresis discussed in the main text.
+
+Following a recent study of related lattice anharmonicity\,\cite{tang2026bistable}, we parametrize the temperature and doping dependence of the lower-order coefficients as
+\begin{equation}\label{eq:appLatticeCoefficients}
+\alpha = c_1 (T-c_2)^2 + c_3, \quad \beta  = c_4 T + c_5 n + c_6.
+\end{equation}
+The coefficient $\alpha$ represents the harmonic lattice stiffness and controls the underlying second-order structural tendency. In the regime considered here, however, the lattice is not expected to undergo spontaneous symmetry breaking; rather, a metastable high-symmetry configuration remains present throughout the parameter space. We therefore choose a quadratic temperature dependence for $\alpha$ in order to avoid a sign change. In addition, we do not include an explicit doping dependence of $\alpha$, since the doping-dependent electron--lattice effect has already been incorporated through the coupled free energy in Eq.~\eqref{eq:freeEnergyEPC}, and including it again would amount to double counting.
+
+\begin{figure*} [!t]
+\centering 
+\includegraphics[width=17cm]{FigureA1_energyscape_v4.eps}\vspace{-2mm}
+\caption{(a,b) Electronic and lattice-order hysteresis, shown for the same quantities as in Figs.~\ref{fig:dopingHysteresis}(c,d). The gray dashed lines mark the six representative doping values used in panel (c). (c) Free-energy landscapes of the coupled electronic-lattice model $F(\psi,X)$ at those selected doping values. Darker regions represent higher free energy. Red and blue crosses mark the corresponding metastable states along the forward and backward doping sweeps, respectively.}
+\label{fig: FigureA1_energyscape}
+\end{figure*}
+
+The quartic coefficient $\beta$ instead controls the strength of the anharmonicity and is the key parameter governing the emergence of first-order behavior. In particular, the distinction between a potential with a single minimum and one with multiple metastable minima is determined by the structure of Eq.~\eqref{eq:appLatticePotential}, as illustrated in Fig.~\ref{fig:potentialLandscape}. The corresponding boundary is given by
+\begin{equation}
+\frac{1}{3}\beta^2-\alpha\gamma=0,
+\qquad (\beta<0)\,.
+\end{equation}
+Accordingly, only when $\beta < \beta_c =-\sqrt{3\alpha \gamma}$ does the system develop metastable lattice configurations beyond the high-symmetry state. Since the parameter regime studied in the main text exhibits first-order transitions along both the temperature and doping directions, implying that $\beta$ must cross $\beta_c$, we model the dependence of $\beta$ on these variables through the leading-order linear expansion above, in the spirit of a phenomenological description of the phase transition. Throughout this work, we set $\gamma=1/720$, $c_1=0.0029$, $c_2=0$, $c_3=0.5$, $c_4=0.0046$, and $c_6=-0.091$. The doping coefficient is chosen as $c_5=0.026$ for electron doping and $c_5=0.068$ for hole doping.
+
+
+
+
+
+
+
+
+\section{Evolution of Free Energy Landscape and Metastable States}\label{app:FreeEnergyEvolution}
+
+To illustrate the first-order phase transition and the doping-induced hysteretic process, we examine in more detail the forward and backward sweeps discussed in Sec.~\ref{sec:dopingHysteresis}, and present the corresponding free-energy landscapes $\mathcal F[\psi_{\mathbf q},X_{\mathbf q}]$ of the two coupled order parameters in Fig.~\ref{fig: FigureA1_energyscape}.
+
+Stage I corresponds to a $(T,n)$ point far from the VHS, where no substantial electronic instability is present. In this regime, the electronic free energy remains purely parabolic, with $a(T,n) > 0$ in Eq.~\eqref{eq:electronCoefficient}, so no spontaneous electronic symmetry breaking occurs. At the same time, the lattice potential in Eq.~\eqref{eq:latticePotential} also supports only a single minimum because $\beta > \beta_c$. The coupled free-energy landscape therefore contains only one stable minimum at $(\psi,X)=(0,0)$, corresponding to the fully symmetric state [see Fig.~\ref{fig: FigureA1_energyscape}(c)].
+
+Within doping increasing toward the CNP, the lattice potential begins to change as $\beta$ falls below $\beta_c$. According to the discussion in Appendix \ref{app:latticePotential}, this change produces secondary metastable states in the lattice potential, which is a characteristic consequence of anharmonicity. Meanwhile, the electronic susceptibility $\chi({\vb*{q}})$ also grows, but in stages II--IV it is still not strong enough to trigger a CDW phase transition. As a result, the coupled free-energy landscape in these stages contains three local minima [see Fig.~\ref{fig: FigureA1_energyscape}(c)]. The high-symmetry minimum (blue crosses) corresponds to the state with neither lattice nor electronic order, while the two low-symmetry minima (red crosses) represent the metastable lattice-distorted states. Due to the linear electron-phonon coupling between the two order parameters, the landscape is tilted along a diagonal direction, so that the two lattice-distorted states are accompanied by nonzero electronic orders of opposite sign.
+
+During the forward sweep starting from stage I, the system remains adiabatically connected to the high-symmetry minimum even after the low-symmetry metastable states appear. Thus, although the free-energy landscape already develops additional minima in stages II--IV, the system stays trapped in the no-order branch [blue lines in Figs.~\ref{fig: FigureA1_energyscape}(a) and (b)]. Even at stage III, where $\chi({\vb*{q}})$ is already significantly enhanced, it is still insufficient to destabilize the symmetric state. Consequently, the order parameters stay at zero throughout the forward sweep.
+
+When the doping is tuned close to the VHS, for instance at the stage V, while the high-symmetry state still survives, but its potential well has already become very shallow and only weakly stable [see Fig.~\ref{fig: FigureA1_energyscape}(c)]. By contrast, the two low-symmetry metastable states become more favorable. As the doping is tuned even closer to the VHS, the electronic susceptibility $\chi({\vb*{q}})$ becomes strong enough to drive a sign change of the coefficient $a(T,n)$ in Eq.~\eqref{eq:electronCoefficient}. In the free-energy landscape, this corresponds to the collapse of the high-symmetry minimum. Once the electronic sector spontaneously breaks symmetry, the system must fall into one of the two low-symmetry minima, and the corresponding lattice distortion is selected at the same time. This abrupt transfer between distinct minima is precisely what produces the jump of the order parameters in Figs.~\ref{fig: FigureA1_energyscape}(a) and (b).
+
+After this symmetry breaking has been triggered by the VHS, the system can no longer return smoothly to the high-symmetry branch when the doping is reduced back toward stages V and IV, which is the defining feature of a first-order phase transition. Instead,  during the backward sweep, both the electronic and lattice order parameters remain trapped in the low-symmetry minima. This asymmetry between the two paths is the origin of the doping hysteresis discussed in Sec.~\ref{sec:dopingHysteresis}.
+
+Although the free-energy landscapes in stages II--V share the same qualitative structure, their quantitative shapes change strongly with doping. As emphasized in Sec.~\ref{sec:dopingHysteresis}, once the system is trapped in an anharmonic metastable branch, the magnitude of the electronic order is controlled sensitively by the susceptibility $\chi({\vb*{q}})$. This leads to the nontrivial evolution of the backward-sweep order parameters. Near stage V, close to the VHS, the large susceptibility strongly tilts the landscape toward the low-symmetry corners and therefore produces a large hysteresis amplitude. Moving away from the VHS toward stage IV rapidly weakens $\chi({\vb*{q}})$ and correspondingly reduces the order parameter, although it remains finite. Near stage III, the susceptibility is enhanced again around $n_{\rm bump}$, associated with the band top of the second band, which produces the bump structure in the backward sweep. Once the doping moves away from that feature, the bump quickly disappears and the order parameter returns to a small but finite value in stage II. 
+
+Eventually, when the doping is tuned all the way back to stage I, the lattice potential no longer supports multiple local minima. The previously established ordered state is then lost, and the system undergoes a second first-order jump back to the unique high-symmetry minimum shown in Fig.~\ref{fig: FigureA1_energyscape}(c). This final jump closes the hysteresis loop in Figs.~\ref{fig: FigureA1_energyscape}(a) and (b).
+
+
+\bibliography{refs}
+
+\end{document}
