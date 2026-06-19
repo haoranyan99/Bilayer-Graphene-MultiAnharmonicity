@@ -1,0 +1,103 @@
+{
+  "io": {
+    "data_dir": "data"
+  },
+
+  "lattice": {
+    "layer_num": 2,
+    "a0_A": 2.46,
+    "d0_A": 3.35,
+    "vacuum_A": 10.0,
+    "pressure_GPa": 0.0,
+    "epsilon_r": 3.5
+  },
+
+  "sk_params": {
+    "Vpp_pi0": -2.81,
+    "Vpp_sigma0": 0.48,
+    "q_pi": 3.1451,
+    "a_pi": 1.418,
+    "q_sigma": 7.428,
+    "a_sigma": 3.349,
+    "r_c": 6.14,
+    "l_c": 0.265,
+    "r_cut": 8.5,
+    "nR_max": 6,
+    "include_intralayer": true,
+    "include_interlayer": true,
+    "r_min": 1e-6,
+    "t_min": 1e-12
+  },
+
+  "tb_params": {
+    "gamma0": 3.16,
+    "gamma1": 0.381,
+    "gamma3": 0.38,
+    "gamma4": 0.14,
+    "delta_prime": 0.022
+  },
+
+  "hamiltonian": {
+    "model": "tb",
+    "onsite_layer_gap_eV": 0.0,
+    "valley": 1,
+    "k_point": "K"
+  },
+
+  "band_plot_full": {
+    "model": "tb",
+    "onsite_layer_gap_eV": 0.012,
+    "energy_shift_to_midgap": true,
+    "output_dir": "figures",
+    "path": "GMKG",
+    "Nk_seg": 200
+  },
+
+  "band_plot_localK": {
+    "model": "sk",
+    "onsite_layer_gap_eV": 0.012,
+    "valley": 1,
+    "energy_shift_to_midgap": true,
+    "output_dir": "figures",
+    "direction": "kx",
+    "length_Ainv": 0.2,
+    "num_points": 401
+  },
+
+  "patch": {
+    "model": "tb",
+    "onsite_layer_gap_eV": 0.012,
+    "valley": 1,
+    "mu_eV_list": {
+      "min": -0.5,
+      "max": 0.5,
+      "num": 401
+    },
+    "temperature_K": 0.0,
+    "energy_shift_to_midgap": true,
+    "center": "K",
+    "Nx": 51,
+    "Ny": 51,
+    "dx_Ainv": 0.004,
+    "dy_Ainv": 0.004
+  },
+
+  "susceptibility": {
+    "eta_eV": 0.0001,
+    "use_form_factor": true,
+    "diagonal_band_only": false,
+    "band_indices": [],
+    "q_mesh": {
+      "Nq_half": 4
+    }
+  },
+
+  "susceptibility_doping_curve": {
+    "q_index": [2, 0],
+    "temperature_K": 0.0,
+    "eta_eV": 0.0001,
+    "use_form_factor": true,
+    "diagonal_band_only": false,
+    "band_indices": []
+  }
+}

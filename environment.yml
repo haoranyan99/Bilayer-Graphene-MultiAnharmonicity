@@ -1,0 +1,9 @@
+name: blg
+channels:
+  - conda-forge
+dependencies:
+  - python=3.13
+  - pip
+  - pip:
+      - numpy>=2.0
+      - matplotlib>=3.8
