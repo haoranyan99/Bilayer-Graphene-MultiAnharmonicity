@@ -1,0 +1,23 @@
+* text=auto
+
+*.py text eol=lf
+*.m text eol=lf
+*.json text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.txt text eol=lf
+*.md text eol=lf
+*.tex text eol=lf
+*.bib text eol=lf
+*.eps text eol=lf
+*.gitignore text eol=lf
+*.gitattributes text eol=lf
+
+*.pdf binary
+*.fig binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.ai binary
+*.npz binary
+*.npy binary
